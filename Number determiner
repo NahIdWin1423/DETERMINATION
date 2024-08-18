@@ -1,0 +1,31 @@
+/**
+ * Function to determine if a number is positive, negative, or zero.
+ * @param {number} num - The number to be evaluated.
+ * @returns {string} - A message indicating whether the number is positive, negative, or zero.
+ */
+function determineNumber(num) {
+    try {
+        // Check if the input is a number
+        if (typeof num !== 'number') {
+            throw new TypeError('Input must be a number.');
+        }
+
+        // Determine if the number is positive, negative, or zero
+        if (num > 0) {
+            return 'The number is positive.';
+        } else if (num < 0) {
+            return 'The number is negative.';
+        } else {
+            return 'The number is zero.';
+        }
+    } catch (error) {
+        // Handle the error and return a user-friendly message
+        return `Error: ${error.message}`;
+    }
+}
+
+// Example usage
+console.log(determineNumber(5));    // Output: The number is positive.
+console.log(determineNumber(-3));   // Output: The number is negative.
+console.log(determineNumber(0));    // Output: The number is zero.
+console.log(determineNumber('a'));  // Output: Error: Input must be a number.
